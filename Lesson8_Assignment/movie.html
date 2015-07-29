@@ -47,6 +47,31 @@
             <p class="list-group-item-text lead text-primary" id="Released">  </p>
         </a> 
 
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Language:</h3>
+            <p class="list-group-item-text lead text-primary" id="Language">  </p>
+        </a> 
+
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Genre:</h3>
+            <p class="list-group-item-text lead text-primary" id="Genre">  </p>
+        </a> 
+
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Country:</h3>
+            <p class="list-group-item-text lead text-primary" id="Countery">  </p>
+        </a> 
+
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Runtime:</h3>
+            <p class="list-group-item-text lead text-primary" id="Runtime">  </p>
+        </a> 
+
+        <a href="#" class="list-group-item">
+            <h3 class="list-group-item-heading">Director:</h3>
+            <p class="list-group-item-text lead text-primary" id="Director">  </p>
+        </a> 
+
     </div>
 </div> 
     <script>
@@ -55,7 +80,7 @@
                  var message = 't=' + $('#movieName').val();   
                  $.ajax({
                       type: 'GET',
-                      url: 'movie.php?',
+                      url:'https://www.omdbapi.com/?',
                       data: message             
                 })
                 .done(function(json){
@@ -64,6 +89,11 @@
                      $('#Actors').html(json.Actors);
                      $('#Plot').html(json.Plot);
                      $('#Released').html(json.Released);
+                     $('#Language').html(json.Language);
+                     $('#Genre').html(json.Genre);
+                     $('#Country').html(json.Country);
+                     $('#Runtime').html(json.Runtime);
+                     $('#Director').html(json.Director);
                 })
                 .fail(function() {
                       alert("Posting failed.");              
